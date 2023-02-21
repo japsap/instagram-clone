@@ -1,0 +1,148 @@
+.loginPage-container{
+    display: block;
+    height:80vh;
+    max-width: 850px;
+    position: absolute;
+    left: 50%;top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.loginPage-container .inputContainer{
+    height: auto;
+    padding: 40px 30px;
+    border: 1px solid #dbdbdb;
+    align-items: center;
+    width: auto;
+    margin-bottom: 20px;
+}
+.loginPage-container .inputContainer .loginPage-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+.loginPage-container .inputContainer .loginPage-logo img{
+    height: auto;
+}
+
+.inputContainer .loginPage-submit > * input{
+  padding: 12px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  outline: none;
+
+  width: 350px;
+  display: block;
+}
+
+.inputContainer .loginPage-submit > * input:placeholder{
+    color: #dbdbdb;
+}
+
+
+.inputContainer .loginPage-submit .button-disabled{
+    width: 350px;
+    padding: 12px;
+
+    margin-top: 15px;
+
+    background-color: #0095F6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.error_msg{
+    color: red;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.229);
+}
+
+.inputContainer .choseAnotherOption{
+    text-align: center;
+    color: #9b9b9b;
+    font-size: 20px;
+    margin: 50px 0px;
+    width: 100%;
+
+    border-bottom: 1px solid #dbdbdb ;
+    line-height: 0.1em;
+}
+.inputContainer .choseAnotherOption span{
+    background:#fff; 
+    padding:0 10px; 
+}
+
+
+.inputContainer .loginPage-link{
+    text-align: center;
+}
+
+.inputContainer .loginPage-link .facebook-login{
+    font-size: 20px;
+    color: #395386;
+    text-decoration: none;
+}
+.inputContainer .loginPage-link .forgot-password{
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.loginPage-container .signIn{
+    text-align: center;
+    padding: 40px 30px;
+    border: 1px solid #dbdbdb;
+}
+
+.signIn p{
+    font-size: 18px;
+}
+.signIn span{
+    color: #0095F6;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.get-the-app{
+    margin-top: 40px;
+    width: 400px;
+}
+.get-the-app p{
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.get-the-app .get-the-app-images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.get-the-app .get-the-app-images img{
+    width: 150px;
+    height: auto;
+}
+
+
+@media screen and (max-width: 678px) {
+    .loginPage-container{
+        height: 100vh;
+    }
+}
