@@ -48,7 +48,7 @@ const SigninPage = ({ setHasAccount, hasAccount }) => {
       <form onSubmit={onSubmit} className="loginPage-submit">
         <div className="loginPage-submit-username">
           <input
-            type="text"
+            type="username"
             placeholder="Phone, number, username or email"
             value={username}
             onChange={(e) => setUsername(e.target.value)}

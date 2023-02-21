@@ -13,7 +13,7 @@ const UserSchema = new Schema({
         required: true,
         minLength: [5, 'Email too short!']
     },
-    pasword: {
+    password: {
         type: String,
         required: true,
         minLength: [3, 'Password too short!']
@@ -21,9 +21,9 @@ const UserSchema = new Schema({
 })
 
     UserSchema.pre('save', function(next){
-        bcrypt.hash(this.pasword, 10) 
+        bcrypt.hash(this.password, 10) 
             .then(hash => {
-                this.pasword = hash;
+                this.password = hash;
 
                 next();
             })
