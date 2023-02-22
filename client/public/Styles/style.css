@@ -1,4 +1,6 @@
 @import './login.css';
+@import './navbar.css';
+@import './Stories.css';
 
 *{
     padding: 0;
@@ -8,4 +10,14 @@
 }
 
 
-
+.profile-container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+    margin-left: 150px;
+    height: auto;
+}
+.fyp-container{
+    display: flex;
+    justify-content: space-between;
+}

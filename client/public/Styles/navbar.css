@@ -1,0 +1,103 @@
+.narbar-container{
+    background-color: #000000;
+    height: 100vh;
+    position:absolute;
+    left: 0;
+    width: 335px;
+    border-right: 0.1px solid #636363;
+}
+
+.narbar-container .large-navbar{
+    padding-top: 20px;
+
+}
+
+.large-navbar .navbar-logo img{
+    height: auto;
+    width: 120px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+.large-navbar .navbar-links{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.large-navbar .navbar-links .icon{
+    margin-right: 20px;
+    font-size: 25px;
+    color: white;
+    transition: .4s;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.large-navbar .navbar-links li{
+    list-style: none;
+    border-radius:40px ;
+    font-size:20px;
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    transition: .4s;
+}
+.large-navbar .navbar-links li:hover{
+    background-color: #111111;
+}
+.large-navbar .navbar-links li:hover > .icon{
+    transform: scale(1.1);
+}
+
+.large-navbar .navbar-links li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+    font-size: 18px;
+    
+}
+
+.large-navbar .user-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 10px;
+
+}
+.large-navbar .user-container li{
+    transition: .4s ;
+}
+.large-navbar .user-container li:hover {
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 5px;
+}
+.large-navbar .user-container img{
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+
+.large-navbar .more{
+    cursor: pointer;
+    color: white;
+    display: flex;
+    padding: 10px;position: absolute;
+    bottom: 2%;
+    margin-left: 20px;
+}
+
+.large-navbar .more i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.large-navbar .more li{
+    list-style: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

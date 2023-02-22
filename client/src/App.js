@@ -1,39 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router'
-
-//hooks
-import useFetch from './Hooks/useFetch';
+import authUser from './Hooks/useAuth';
 
 //components
 import Loger from './Routes/Loger';
-import Profile from './Routes/Profile';
-
-//firebase comps
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './Hooks/firebase';
-
+import Profile from './Routes/MainPage';
+import Navbar from './Components/Navbar';
 
 const App = () => {
 
-  const [ user, setUser ] = useState();
+  const [ user ] = authUser();
 
-  const authListener = () => {
-    onAuthStateChanged(auth, user => {
-      if(user){
-        return setUser(user)
-      }
-    })
-  }
-
-  useEffect(() => {
-    authListener()
-  }, [])
-
+  // zyDKEY23HOC7L48dxrBShcSkEon9D2THx4tkuzcfNbIeULETYJ88qN1q api key
 
   return (
     <div className='app-container'>
       <Routes>
-        {user ? <Route path='/' element={<Profile user={user}/>}/> :  <Route path='/' element={<Loger/>}/>}       
+        {user ? <Route path='/' element={<Profile user={user}/>}/> :  <Route path='/' element={<Loger/>}/>} 
+        <Route path='/profile' element={<Profile/>}/>     
       </Routes>
     </div>  
   )

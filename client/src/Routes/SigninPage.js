@@ -34,7 +34,8 @@ const SigninPage = ({
   };
 
   return (
-    <div className="loginPage-container">
+    <div className="lg-container">
+<div className="loginPage-container">
       {/* input container */}
       <div className="inputContainer">
         {/* logo */}
@@ -115,6 +116,8 @@ const SigninPage = ({
         </div>
       </div>
     </div>
+    </div>
+    
   );
 };
 

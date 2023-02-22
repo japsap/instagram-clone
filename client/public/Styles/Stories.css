@@ -1,0 +1,30 @@
+.photos-container {
+  display: flex;
+  padding: 50px;
+  background-color: red;
+  height: auto;
+}
+.images-container {
+  margin-right: 25px;
+  width: 63.5px;
+  height: 63.5px;
+  border-radius: 50%;
+  background: linear-gradient(to right, red, orange);
+  padding: 1.5px;
+}
+.images-container .image.image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  object-fit: cover;
+  cursor: pointer;
+}
+.images-container  p {
+    color: #6B6B6B;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 13px;
+    width: 100%;
+    overflow: hidden;
+}

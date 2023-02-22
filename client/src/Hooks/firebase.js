@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth'
+import { getAuth, signOut } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYTYTNSETqRoXV-iDAcyVA5e20tCOT5Xw",
@@ -14,6 +14,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const fire = initializeApp(firebaseConfig);
 export const auth = getAuth(fire)
+
+export const handleLogOut = () => {
+  if(window.confirm("Are you sure you want to log out?")){
+    signOut(auth);
+    window.location.reload();
+  }
+}
 
 
 export default fire

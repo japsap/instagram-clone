@@ -8,7 +8,7 @@ import SigninPage from "./SigninPage";
 
 //firebase imports
 import { auth } from "../Hooks/firebase";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, updateCurrentUser } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, } from "firebase/auth";
 
 
 const Loger = () => {
@@ -23,8 +23,6 @@ const Loger = () => {
   
   const navigate = useNavigate();
 
-  const { currentUser } = getAuth()
-
   const handleSignup = () => {
     createUserWithEmailAndPassword(auth, email, password) 
       .then(() => navigate('/'))
@@ -32,10 +30,10 @@ const Loger = () => {
         switch (err.code) {
           case "auth/email-already-in-use":
           case "auth/invalid-email":
-            setEmailError(err.message);
+            setEmailError(err.code);
             break;
           case "auth/weak-password":
-            setPasswordError(err.message);
+            setPasswordError(err.code);
             break;
         }
       });
@@ -45,14 +43,13 @@ const Loger = () => {
     signInWithEmailAndPassword(auth, email, password) 
       .then(() => navigate('/'))
       .catch(err => {
-        console.log(err.code);
         switch (err.code) {
           case "auth/email-already-in-use":
           case "auth/invalid-email":
-            setEmailError(err.message);
+            setEmailError(err.code);
             break;
           case "auth/weak-password":
-            setPasswordError(err.message);
+            setPasswordError(err.code);
             break;
         }
       });
