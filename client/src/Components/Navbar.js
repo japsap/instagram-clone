@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../Assets/Images/instagram-logo-white.png";
+import logoSmall from '../Assets/Images/download.png'
 import DummyData from "../DummyData";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { getAuth } from "firebase/auth";
 import { handleLogOut } from "../Hooks/firebase";
+
 
 
 const Navbar = () => {
@@ -21,7 +23,8 @@ const Navbar = () => {
     <div className="narbar-container">
       <div className="large-navbar">
         <div className="navbar-logo">
-          <img src={logo} />
+          <img src={logo} className='img-big' />
+          <img src={logoSmall} className='img-small' />
         </div>
         <div className="navbar-links">
           {DummyData.pcNavbar.map((link) => {
