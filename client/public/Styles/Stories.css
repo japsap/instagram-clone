@@ -35,8 +35,6 @@
 .posts-container{
   width: 510px;
   margin-top: 30px;
-  display: flex;
   margin-left: 50px;
-  height: auto;
   overflow-x: hidden;
 }

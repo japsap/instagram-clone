@@ -12,7 +12,6 @@ const App = () => {
 
   const [ user ] = authUser();
 
-
   return (
     <div className='app-container'>
       <Routes>

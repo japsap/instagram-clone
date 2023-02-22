@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const { currentUser } = getAuth();
 
-  const { displayName, photoUrl } = currentUser;
+  const { displayName, photoUrl, email } = currentUser;
 
   return (
     <div className="narbar-container">
@@ -39,8 +39,8 @@ const Navbar = () => {
           <div className="user-container">
             <li onClick={() => {handleLogOut()}}>
               <img src={photoUrl == null ? defaultImg : photoUrl} />
-              <Link to="/profile">
-                {displayName == null ? "Unknown" : displayName}
+              <Link to="/">
+                {displayName == null ? email : displayName}
               </Link>
             </li>
           </div>

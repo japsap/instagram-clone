@@ -1,7 +1,7 @@
 .narbar-container{
     background-color: #000000;
     height: 100vh;
-    position:absolute;
+    position:fixed;
     left: 0;
     width: 335px;
     border-right: 0.1px solid #636363;

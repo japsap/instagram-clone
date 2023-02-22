@@ -13,10 +13,19 @@ const PhotoSchema = new Schema({
         minLength: [6, 'Description is too small']
         
     },
+    ownerName: {
+        type: String
+    },
     uid : {
         type : String,
         required : true
-    }
+    },
+    likes : {
+        type: Number 
+    },
+    liked:[{
+        type: String
+    }]
 })
 
 

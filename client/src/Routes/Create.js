@@ -1,5 +1,6 @@
 import { getAuth } from "firebase/auth";
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import useCrud from "../Hooks/useCrud";
 
 const Create = () => {
@@ -14,8 +15,10 @@ const Create = () => {
   const { currentUser } = getAuth();
   const { uid } = currentUser;
 
+  const navigate = useNavigate();
 
-  const onSubmit = (e) => {
+
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     if(image.length < 3){
@@ -27,8 +30,10 @@ const Create = () => {
         return setErrorD('Short description!')
     }
 
-    postPost({ image, description, uid })
+   postPost({ image, description, ownerName: currentUser.email ,uid, likes : 0})
+    window.location.reload();
   };
+
 
   return (
     <div className="create-image">

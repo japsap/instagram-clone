@@ -1,6 +1,7 @@
 const url_postLogin_user = "http://localhost:5000/login";
 const url_postRegister_user = "http://localhost:5000/register";
 const url_postPhoto = "http://localhost:5000/create-post";
+const url_photoLike = "http://localhost:5000/like";
 
 const useCrud = () => {
 
@@ -32,18 +33,27 @@ const useCrud = () => {
   }
 
 
-  const postPost = (image, description, owner) => {
+  const postPost = (image, description, ownerName ,owner, likes) => {
     return fetch(url_postPhoto, {
         method: "POST",
         headers: headers,
-        body: JSON.stringify({ image, description, owner }),
+        body: JSON.stringify({ image, description, ownerName ,owner, likes }),
     }).then(res => res.json());
+  }
+
+  const updateLike = (likes, _id) => {
+    return fetch(url_photoLike, {
+      method: "POST",
+        headers: headers,
+        body: JSON.stringify({ likes, _id }),
+    }).then((res) => res.json())
   }
 
   return {
     postLoginUser,
     postRegisterUser,
-    postPost
+    postPost,
+    updateLike
   };
 };
 
