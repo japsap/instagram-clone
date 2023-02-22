@@ -1,4 +1,6 @@
+import { getAuth } from "firebase/auth";
 import React, { useState } from "react";
+import useCrud from "../Hooks/useCrud";
 
 const Create = () => {
   const [ image, setImage ] = useState("");
@@ -6,6 +8,12 @@ const Create = () => {
 
   const [ errorP, setErrorP ] = useState('')
   const [ errorD, setErrorD ] = useState('')
+
+  const { postPost } = useCrud()
+
+  const { currentUser } = getAuth();
+  const { uid } = currentUser;
+
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -18,6 +26,8 @@ const Create = () => {
         setErrorP('')
         return setErrorD('Short description!')
     }
+
+    postPost({ image, description, uid })
   };
 
   return (

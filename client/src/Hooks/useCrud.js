@@ -1,5 +1,6 @@
 const url_postLogin_user = "http://localhost:5000/login";
 const url_postRegister_user = "http://localhost:5000/register";
+const url_postPhoto = "http://localhost:5000/create-post";
 
 const useCrud = () => {
 
@@ -30,9 +31,19 @@ const useCrud = () => {
     .then((res) => res.json())
   }
 
+
+  const postPost = (image, description, owner) => {
+    return fetch(url_postPhoto, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify({ image, description, owner }),
+    }).then(res => res.json());
+  }
+
   return {
     postLoginUser,
-    postRegisterUser
+    postRegisterUser,
+    postPost
   };
 };
 

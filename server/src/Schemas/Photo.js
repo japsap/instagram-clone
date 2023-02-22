@@ -13,9 +13,9 @@ const PhotoSchema = new Schema({
         minLength: [6, 'Description is too small']
         
     },
-    owner : {
-        type: mongoose.Types.ObjectId,
-        id: Number
+    uid : {
+        type : String,
+        required : true
     }
 })
 
