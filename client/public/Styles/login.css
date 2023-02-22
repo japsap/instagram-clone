@@ -67,8 +67,7 @@
 
 .error_msg{
     color: red;
-    padding: 10px;
-    margin-top: 10px;
+    margin: 10px 0px;
     text-align: center;
     background-color: rgba(255, 0, 0, 0.229);
 }

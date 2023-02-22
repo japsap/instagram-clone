@@ -2,38 +2,30 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../Assets/Images/instagram-logo.png";
-import google from '../Assets/Images/googleplay-button.png'
-import iphone from '../Assets/Images/apple-button.png'
+import google from "../Assets/Images/googleplay-button.png";
+import iphone from "../Assets/Images/apple-button.png";
 
 import { AiFillFacebook } from "react-icons/ai";
 
+//get user credentials
 
-//get user credentials 
-import useCrud from "../Hooks/useCrud";
+const LoginPage = ({
+  setHasAccount,
+  hasAccount,
+  email,
+  password,
+  setEmail,
+  setPassword,
+  handleLogin,
 
-const LoginPage = ({ setHasAccount, hasAccount }) => {
-
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const [ showErr, setShowErr ] = useState(false)
-  const [ error, setError ] = useState("Credentials too short!")
-
-
-  const { postLoginUser } = useCrud()
-
+  emailError,
+  passwordError
+}) => {
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault();  
 
-    if(username.length <= 0 || password.length <= 0){
-      return setShowErr(true)
-    }
-
-    postLoginUser(
-      username,
-      password
-    )
+    handleLogin();
 
   };
 
@@ -48,14 +40,17 @@ const LoginPage = ({ setHasAccount, hasAccount }) => {
 
         {/* get data container */}
         <form onSubmit={onSubmit} className="loginPage-submit">
-          <div className="loginPage-submit-username">
+      
+        <div className="loginPage-submit-email">
             <input
-              type="text"
+              type="email"
               placeholder="Phone, number, username or email"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
+
+          <p className="error_msg">{emailError}</p>
 
           <div className="loginPage-submit-password">
             <input
@@ -66,41 +61,42 @@ const LoginPage = ({ setHasAccount, hasAccount }) => {
             />
           </div>
 
-          <button
-            type="submit"
-            value="Login"
-            className={`button-disabled`}
-          >
+          <p className="error_msg">{passwordError}</p>
+
+          <button type="submit" value="Login" className={`button-disabled`}>
             Log in
           </button>
 
-          {showErr && <p className="error_msg">{error}</p>}
         </form>
         {/* end of the form */}
 
-        <p className="choseAnotherOption"><span>OR</span></p>
+        <p className="choseAnotherOption">
+          <span>OR</span>
+        </p>
 
         <div className="loginPage-link">
           <Link className="facebook-login">
-              <AiFillFacebook />
-              Log in with Facebook
-          </Link> <br style={{marginBottom:'20px'}}></br>
-          <Link  className="forgot-password">
-            Forgot Password
-          </Link>
+            <AiFillFacebook />
+            Log in with Facebook
+          </Link>{" "}
+          <br style={{ marginBottom: "20px" }}></br>
+          <Link className="forgot-password">Forgot Password</Link>
         </div>
       </div>
 
       {/* sign in container */}
       <div className="signIn">
-        <p>Dont have an account? <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></p>
+        <p>
+          Dont have an account?{" "}
+          <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span>
+        </p>
       </div>
 
       <div className="get-the-app">
         <p>get the app.</p>
         <div className="get-the-app-images">
-            <img src={iphone}/>
-            <img src={google}/>
+          <img src={iphone} />
+          <img src={google} />
         </div>
       </div>
     </div>
