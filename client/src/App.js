@@ -11,7 +11,6 @@ const App = () => {
 
   const [ user ] = authUser();
 
-  // zyDKEY23HOC7L48dxrBShcSkEon9D2THx4tkuzcfNbIeULETYJ88qN1q api key
 
   return (
     <div className='app-container'>
