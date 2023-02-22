@@ -3,6 +3,7 @@
 @import './Suggestions.css';
 @import './Stories.css';
 @import './createPost.css';
+@import './profile.css';
 
 *{
     padding: 0;

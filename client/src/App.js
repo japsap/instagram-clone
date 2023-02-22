@@ -4,9 +4,9 @@ import authUser from './Hooks/useAuth';
 
 //components
 import Loger from './Routes/Loger';
-import Profile from './Routes/MainPage';
-import Navbar from './Components/Navbar';
+import MainPage from './Routes/MainPage';
 import Create from './Routes/Create';
+import Profile from './Routes/Profile';
 
 const App = () => {
 
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className='app-container'>
       <Routes>
-        {user ? <Route path='/' element={<Profile user={user}/>}/> :  <Route path='/' element={<Loger/>}/>} 
+        {user ? <Route path='/' element={<MainPage user={user}/>}/> :  <Route path='/' element={<Loger/>}/>} 
         <Route path='/profile' element={<Profile/>}/>     
         <Route path='/create' element={<Create/>}/>
       </Routes>

@@ -1,0 +1,81 @@
+.profile{
+    margin-top: 40px;
+    border-bottom: 1px solid rgb(73, 73, 73);
+}
+.profile img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 80px;
+}
+.profile .username{
+    display: flex;
+}
+
+.profile .username p{
+    color: white;
+    font: 500;
+    padding: 5px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.profile .username button {
+    color: black;
+    background-color: white;
+    border: 5px;
+    width: 120px;
+    height: 30px;
+    margin-right: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.profile .username button:hover{
+    background-color: rgb(144, 144, 144);
+}
+
+.profile .username .icon{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.profile-info .posts{
+    margin-top: 20px;
+    margin-left: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;;
+    font-size: 18px;
+}
+
+.profile-info .bio{
+    margin-top: 20px;
+    color: white;
+    margin-left: 7px;
+    margin-bottom: 50px;
+}
+.profile-info .bio p {
+    margin-bottom: 5px;
+}
+.neshto-container{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    height: auto;
+    width: 900px;
+    transform: translate(-30%,-30%);
+}
+
+.neshto-container img{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+

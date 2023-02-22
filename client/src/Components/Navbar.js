@@ -7,7 +7,7 @@ import DummyData from "../DummyData";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { getAuth } from "firebase/auth";
-import { handleLogOut } from "../Hooks/firebase";
+
 
 
 
@@ -16,8 +16,6 @@ const Navbar = () => {
     "https://msrealtors.org/wp-content/uploads/2018/11/no-user-image.gif";
 
   const { currentUser } = getAuth();
-
-  const { displayName, photoUrl, email } = currentUser;
 
   return (
     <div className="narbar-container">
@@ -37,10 +35,10 @@ const Navbar = () => {
             );
           })}
           <div className="user-container">
-            <li onClick={() => {handleLogOut()}}>
-              <img src={photoUrl == null ? defaultImg : photoUrl} />
-              <Link to="/">
-                {displayName == null ? email : displayName}
+            <li >
+              <img src={currentUser?.photoURL== null ? defaultImg : currentUser?.photoURL} />
+              <Link to="/profile">
+                {currentUser?.displayName == null ? currentUser?.email : currentUser?.displayName}
               </Link>
             </li>
           </div>

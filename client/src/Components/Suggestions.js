@@ -2,7 +2,9 @@ import React from 'react'
 
 const Suggestions = () => {
   return (
-    <div>Suggestions</div>
+    <div>
+      
+    </div>
   )
 }
 

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signOut } from 'firebase/auth'
+import { useNavigate } from "react-router";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYTYTNSETqRoXV-iDAcyVA5e20tCOT5Xw",
