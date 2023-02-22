@@ -1,0 +1,86 @@
+.create-image{
+
+}
+
+.create-image .create-header{
+    height: 50vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-position: 50% 20%;
+    background-color: rgba(240, 248, 255, 0.107);
+}
+.create-image .create-header h1{
+    text-align: center;
+    color: white;display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.create-image .create-form{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.create-image .create-form .create-input{
+    position: relative;
+    display: flex;
+}
+.create-image .create-form .create-input label{
+    position: absolute;
+    color: rgb(69, 69, 69);
+    bottom: 70%;
+    transition: .4s;
+}
+.create-image .create-form .create-input input{
+    width: 300px;
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom:1px solid white;
+    outline: none;
+    color: white;
+    margin-bottom: 50px;
+}
+
+
+
+.create-image .create-form .create-input textarea{
+    width: 300px;
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom:1px solid white;
+    outline: none;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.create-image .create-form button{
+    color: rgb(69, 69, 69);
+    background-color: white;
+    width: 300px;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.create-image .create-form .create-input input:focus ~ label,
+.create-image .create-form .create-input input:not([value=""]):valid ~ label{
+  bottom: 100%;
+  color: white;
+}
+
+.create-image .create-form .create-input textarea:focus ~ label{
+    bottom: 100%;
+    color: white;
+  }
+
+
+

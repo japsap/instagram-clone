@@ -2,6 +2,7 @@
 @import './navbar.css';
 @import './Suggestions.css';
 @import './Stories.css';
+@import './createPost.css';
 
 *{
     padding: 0;
