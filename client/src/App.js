@@ -15,9 +15,9 @@ const App = () => {
   return (
     <div className='app-container'>
       <Routes>
-        {user ? <Route path='/' element={<MainPage user={user}/>}/> :  <Route path='/' element={<Loger/>}/>} 
-        <Route path='/profile' element={<Profile/>}/>     
-        <Route path='/create' element={<Create/>}/>
+        {user ? <Route path='/' element={<MainPage user={user}/>}/> :  <Route path='/' element={<Loger/>}/>}
+        {user ? <Route path='/profile' element={<Profile/>}/> :  <Route path='/profile' element={<Loger/>}/>} 
+        {user ? <Route path='/create' element={<Create/>}/> :  <Route path='/create' element={<Loger/>}/>}   
       </Routes>
     </div>  
   )

@@ -31,7 +31,10 @@ const Create = () => {
     }
 
    postPost({ image, description, ownerName: currentUser.email ,uid, likes : 0})
-    window.location.reload();
+   window.location.reload()
+   if( window.location.reload()){
+    navigate('/profile')
+   }
   };
 
 
