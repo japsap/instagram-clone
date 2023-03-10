@@ -76,12 +76,13 @@
 }
 .large-navbar .user-container li{
     transition: .4s ;
+    width: 100%;
 }
-.large-navbar .user-container li:hover {
+/* .large-navbar .user-container li:hover {
     border: 1px solid white;
     padding: 20px;
     border-radius: 5px;
-}
+} */
 .large-navbar .user-container img{
     width: 30px;
     height: auto;
@@ -113,7 +114,7 @@
 }
 
 
-@media screen and (min-width:678px) and (max-width: 1200px){
+@media screen  and (max-width: 1300px){
     .narbar-container{
         width: 70px;
     }
@@ -131,7 +132,7 @@
     }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1300px){
     .navbar-logo .img-small{
         display: none;
     }

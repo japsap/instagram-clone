@@ -1,6 +1,7 @@
 const Photo = require('../Schemas/Photo');
 const photoService = require('../services/photoService');
 
+//------------------------------------------------------------------------------------------------------------//
 
 exports.getPhoto = async (req, res) => {
     let photos = await Photo.find().lean();
@@ -8,10 +9,11 @@ exports.getPhoto = async (req, res) => {
     res.json({ photos })
 }
 
+//------------------------------------------------------------------------------------------------------------//
+
 exports.postPhoto = async (req, res) => {
     const { image, description, uid, likes, ownerName } = req.body.image; 
 
-    console.log(req.body.image);
 
     let photo = new Photo({
         image,
@@ -24,6 +26,7 @@ exports.postPhoto = async (req, res) => {
     await photo.save();
 }
 
+//------------------------------------------------------------------------------------------------------------//
 
 exports.updatePhotoLikes = async (req, res) => {
     
@@ -37,3 +40,12 @@ exports.updatePhotoLikes = async (req, res) => {
     photo.liked.push(likeId);
     photo.save()
 }
+//------------------------------------------------------------------------------------------------------------//
+
+
+exports.getPhotoDetails = async (req, res) => {
+    const photo = await Photo.findById(req.params.photoId).lean();
+    console.log(photo);
+}
+
+

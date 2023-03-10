@@ -38,7 +38,7 @@ const Navbar = () => {
             <li >
               <img src={currentUser?.photoURL== null ? defaultImg : currentUser?.photoURL} />
               <Link to="/profile">
-                {currentUser?.displayName == null ? currentUser?.email : currentUser?.displayName}
+                {currentUser?.displayName == null ? 'Unknown' : currentUser?.displayName}
               </Link>
             </li>
           </div>

@@ -9,7 +9,8 @@ import useCrud from "../../Hooks/useCrud";
 
 const Posts = ({ image, description, uid, likes, _id, liked, ownerName }) => {
   const { currentUser } = getAuth();
-  const uuid = currentUser.uid;
+
+  const uuid = currentUser?.uid;
   const uknown =
     "https://msrealtors.org/wp-content/uploads/2018/11/no-user-image.gif";
 
@@ -26,8 +27,6 @@ const Posts = ({ image, description, uid, likes, _id, liked, ownerName }) => {
     updateLike({ likes: like - 1, _id, liked: ""});
     window.location.reload();
   };
-
-
 
   return (
     <div className="postsContainer">
@@ -48,7 +47,7 @@ const Posts = ({ image, description, uid, likes, _id, liked, ownerName }) => {
       </div>
       <img src={image} />
       <div className="posts-likes">
-        {liked == uuid ? (
+        {liked.includes(uuid) ? (
           <AiFillHeart className="icon red" onClick={unlike} />
         ) : (
           <AiOutlineHeart className="icon" onClick={likess} />

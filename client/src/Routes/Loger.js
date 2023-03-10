@@ -8,7 +8,7 @@ import SigninPage from "./SigninPage";
 
 //firebase imports
 import { auth } from "../Hooks/firebase";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, } from "firebase/auth";
 
 
 const Loger = () => {
@@ -23,7 +23,8 @@ const Loger = () => {
   
   const navigate = useNavigate();
 
-  const handleSignup = () => {
+
+  const handleSignup = (  ) => {
     createUserWithEmailAndPassword(auth, email, password) 
       .then(() => navigate('/'))
       .catch(err => {

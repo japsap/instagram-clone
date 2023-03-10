@@ -13,6 +13,7 @@ const Create = () => {
   const { postPost } = useCrud()
 
   const { currentUser } = getAuth();
+  
   const { uid } = currentUser;
 
   const navigate = useNavigate();

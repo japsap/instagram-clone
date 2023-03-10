@@ -1,5 +1,5 @@
 import { getAuth } from "firebase/auth";
-import { handleLogOut } from '../Hooks/firebase';
+import { handleLogOut } from "../Hooks/firebase";
 
 //react
 import React from "react";
@@ -14,13 +14,14 @@ import { useNavigate } from "react-router";
 
 const Profile = () => {
   const { currentUser } = getAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const uuid = currentUser?.uid
-  const [ posts ] = useFetch('http://localhost:5000/create-post');
+  const uuid = currentUser?.uid;
+  const [posts] = useFetch("http://localhost:5000/create-post");
 
-  let filteredPosts = posts?.photos?.filter(post => post.uid === uuid)
- 
+  let filteredPosts = posts?.photos?.filter((post) => post.uid === uuid);
+
+  console.log(posts?.photos);
 
   return (
     <div className="profile-container">
@@ -37,9 +38,22 @@ const Profile = () => {
           />
           <div className="profile-info">
             <div className="username">
-              <p>yourfavvalexx</p>
-              <button>Edit profile</button>
-              <button onClick={() => {handleLogOut(); navigate('/')}}>Log out</button>
+              <p>
+                {currentUser?.displayName == null
+                  ? "Unknown"
+                  : currentUser?.displayName}
+              </p>
+              <button onClick={() => navigate("/edit-profile")}>
+                Edit profile
+              </button>
+              <button
+                onClick={() => {
+                  handleLogOut();
+                  navigate("/");
+                }}
+              >
+                Log out
+              </button>
               <BsGearWide className="icon" />
             </div>
             <div className="posts">
@@ -48,17 +62,23 @@ const Profile = () => {
               <p>87 following</p>
             </div>
             <div className="bio">
-              <p>Alex :3 </p>
+              {/* <p>Alex :3 </p>
               <p>Уеб дизайнер</p>
-              <p> 22</p>
+              <p> 22</p> */}
             </div>
           </div>
         </div>
       </div>
       <div className="neshto-container">
-        {filteredPosts?.map(post => (
-            <img src={post.image}/>
-        ))}
+        {filteredPosts?.map((post, index) => {
+          return (
+            <img
+              src={post.image}
+              key={index}
+              onClick={() => navigate(`${post._id}`)}
+            />
+          );
+        })}
       </div>
     </div>
   );
